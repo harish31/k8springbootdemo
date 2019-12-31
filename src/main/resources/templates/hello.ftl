@@ -9,6 +9,7 @@
 	    <div class="jumbotron">
 	        <h2>${title}</h2>
 	        <p>${message}</p>
+	        <p>${message}</p>
 	    </div>
 	</div>
 </body>
