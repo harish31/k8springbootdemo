@@ -3,7 +3,7 @@ IMAGE_NAME=$1
 PROJECT_NAME=$2
 
 echo "[Task1] Building an application Package"
-mvn clean package
+/usr/local/src/apache-maven/bin/mvn clean package clean package
 
 echo "[Task2] Building an image"
 sudo docker build -t $IMAGE_NAME .
