@@ -1,6 +1,6 @@
 #!/bin/bash
 IMAGE_NAME=$1
-PROJECT_NAME=$2
+APP_NAME=$2
 
 echo "[Task1] Building an application Package"
 sudo /usr/local/src/apache-maven/bin/mvn clean package
@@ -32,8 +32,8 @@ echo "sudo docker load -i /tmp/$IMAGE_NAME.tar" | ssh kworker2
 echo "[Task10] Removing tar file from worker node 2"
 echo "sudo rm -rf /tmp/$IMAGE_NAME.tar" | ssh kworker2
 
-echo "[Task11] Creating deployment of project"
-kubectl run $PROJECT_NAME --image-pull-policy='Never' --image $IMAGE_NAME
+echo "[Task11] Creating deployment of application"
+kubectl run $APP_NAME --image-pull-policy='Never' --image $IMAGE_NAME
 
 echo "[Task12] Exposing port"
-kubectl expose deployment $PROJECT_NAME --type NodePort --port 8080
+kubectl expose deployment $APP_NAME --type NodePort --port 8080
