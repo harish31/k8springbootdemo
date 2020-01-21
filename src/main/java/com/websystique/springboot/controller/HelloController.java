@@ -11,7 +11,7 @@ public class HelloController {
 	String home(ModelMap modal) {
 		modal.addAttribute("title", "Dear Xpanxioneurs");
 		modal.addAttribute("message", "Welcome to Xpanxion Family");
-		modal.addAttribute("message1", "Welcome to K8s World..!");
+		modal.addAttribute("message1", "Welcome to Kubernetes World..!");
 		return "hello";
 	}
 }
